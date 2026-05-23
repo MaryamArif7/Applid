@@ -1,0 +1,90 @@
+# =========================
+# Dependencies
+# =========================
+node_modules
+**/node_modules
+
+# =========================
+# Build outputs
+# =========================
+dist
+build
+out
+.next
+.turbo
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# keep example env files
+!.env.example
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode
+.idea
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# Coverage
+# =========================
+coverage
+
+# =========================
+# Misc
+# =========================
+.cache
+.parcel-cache
+
+# =========================
+# Extension builds (important)
+# =========================
+extension/dist
+extension/build
+extension/*.pem
+extension/*.crx
+extension/*.zip
+
+# =========================
+# API specific
+# =========================
+api/dist
+api/build
+
+# =========================
+# Web (Next.js)
+# =========================
+web/.next
+web/out
+web/dist
+web/.vercel
+
+# =========================
+# Turborepo / monorepo tools (if used)
+# =========================
+.turbo
