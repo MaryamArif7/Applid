@@ -4,7 +4,7 @@ const features = [
   {
     icon: "🧠",
     title: "Answer Library",
-    desc: "Every answer you've ever typed into a Google Form is saved and searchable. Next time you see "tell us about yourself" — pull from your best past answers instead of starting blank.",
+    desc: "Every answer you've ever typed into a Google Form is saved and searchable. Next time you see ",
     tag: "Killer feature",
     dark: true,
     large: true,
