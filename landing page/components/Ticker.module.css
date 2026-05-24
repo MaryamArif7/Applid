@@ -1,0 +1,44 @@
+.wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 0;
+  background: var(--ink);
+}
+
+.ticker {
+  display: flex;
+  gap: 3rem;
+  animation: ticker 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(247, 243, 236, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--rust);
+  display: inline-block;
+  flex-shrink: 0;
+}
