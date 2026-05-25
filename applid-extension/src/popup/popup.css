@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;900&family=Instrument+Sans:wght@400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #0e0b07;
+  --paper: #f7f3ec;
+  --paper2: #ede8df;
+  --rust: #c94a1e;
+  --cream: #faf7f2;
+  --muted: #7a7169;
+  --border: #d4cdc3;
+}
+
+body {
+  width: 340px;
+  min-height: 200px;
+  max-height: 520px;
+  background: var(--paper);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 13px;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--paper);
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.count {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* EMPTY STATE */
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  gap: 8px;
+}
+
+.empty.hidden {
+  display: none;
+}
+
+.empty-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.empty-title {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.empty-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 220px;
+}
+
+/* SUBMISSIONS LIST */
+.submissions {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 8px 0;
+  display: none;
+}
+
+.submissions.visible {
+  display: block;
+}
+
+.submissions::-webkit-scrollbar {
+  width: 4px;
+}
+
+.submissions::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.submissions::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* SUBMISSION ITEM */
+.sub-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  transition: background 0.15s;
+  cursor: default;
+}
+
+.sub-item:last-child {
+  border-bottom: none;
+}
+
+.sub-item:hover {
+  background: var(--paper2);
+}
+
+.sub-index {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--border);
+  line-height: 1;
+  min-width: 1.5rem;
+  padding-top: 2px;
+}
+
+.sub-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.sub-title {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.sub-meta {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* STATUS SELECTOR */
+.status-select {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  color: var(--muted);
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.status-select:hover {
+  border-color: var(--rust);
+}
+
+.status-select.submitted { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+.status-select.waiting   { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+.status-select.heard_back{ background: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+.status-select.accepted  { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+.status-select.rejected  { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+
+/* ANSWER COUNT */
+.answer-count {
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+  flex-shrink: 0;
+}
+
+.clear-btn {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.clear-btn:hover {
+  color: var(--rust);
+}
+
+.dashboard-link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--rust);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.dashboard-link:hover {
+  opacity: 0.7;
+}

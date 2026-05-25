@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applid</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+  
+    <header class="header">
+      <div class="logo">Applid</div>
+      <div class="header-right">
+        <span class="count" id="count">0 tracked</span>
+      </div>
+    </header>
+
+ 
+    <div class="empty" id="empty-state">
+      <div class="empty-icon">📋</div>
+      <div class="empty-title">Nothing tracked yet</div>
+      <div class="empty-desc">
+        Visit a Google Form and submit it — Applid will capture it automatically.
+      </div>
+    </div>
+
+   
+    <ul class="submissions" id="submissions-list"></ul>
+
+  
+    <footer class="footer">
+      <button class="clear-btn" id="clear-btn">Clear all</button>
+      <a class="dashboard-link" href="https://applid.co/dashboard" target="_blank">
+        Open dashboard →
+      </a>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
