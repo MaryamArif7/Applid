@@ -1,9 +1,4 @@
 import supabase from "../db/supabase.js";
-
-/**
- * GET /submissions
- * Returns all submissions for the authenticated user, newest first.
- */
 export async function getSubmissions(req, res) {
   const userId = req.user.id;
 
@@ -20,11 +15,6 @@ export async function getSubmissions(req, res) {
 
   res.json({ submissions: data });
 }
-
-/**
- * GET /submissions/:id
- * Returns a single submission with its answers.
- */
 export async function getSubmission(req, res) {
   const userId = req.user.id;
   const { id } = req.params;
@@ -43,11 +33,6 @@ export async function getSubmission(req, res) {
   res.json({ submission: data });
 }
 
-/**
- * POST /submissions
- * Called by the Chrome extension when a form is submitted.
- * Body: { title, url, answers: [{question, answer}], submittedAt }
- */
 export async function createSubmission(req, res) {
   const userId = req.user.id;
   const { title, url, answers = [], submittedAt } = req.body;
@@ -56,7 +41,6 @@ export async function createSubmission(req, res) {
     return res.status(400).json({ error: "title and url are required" });
   }
 
-  // ── Duplicate check: same URL submitted in the last 5 minutes ──
   const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
 
   const { data: existing } = await supabase
@@ -71,7 +55,6 @@ export async function createSubmission(req, res) {
     return res.status(409).json({ error: "duplicate", message: "Already tracked this submission recently." });
   }
 
-  // ── Insert submission ──
   const { data: submission, error: subError } = await supabase
     .from("submissions")
     .insert({
@@ -89,7 +72,7 @@ export async function createSubmission(req, res) {
     return res.status(500).json({ error: subError.message });
   }
 
-  // ── Insert answers (bulk) ──
+
   if (answers.length > 0) {
     const answerRows = answers.map((a) => ({
       submission_id: submission.id,
@@ -104,18 +87,14 @@ export async function createSubmission(req, res) {
 
     if (ansError) {
       console.error("[Controller] answers insert error:", ansError);
-      // Don't fail the whole request — submission is saved, answers failed
+      
     }
   }
 
   res.status(201).json({ submission });
 }
 
-/**
- * PATCH /submissions/:id
- * Update the status of a submission.
- * Body: { status: "submitted" | "waiting" | "heard_back" | "accepted" | "rejected" }
- */
+
 export async function updateSubmissionStatus(req, res) {
   const userId = req.user.id;
   const { id } = req.params;
@@ -142,9 +121,7 @@ export async function updateSubmissionStatus(req, res) {
   res.json({ submission: data });
 }
 
-/**
- * DELETE /submissions/:id
- */
+
 export async function deleteSubmission(req, res) {
   const userId = req.user.id;
   const { id } = req.params;

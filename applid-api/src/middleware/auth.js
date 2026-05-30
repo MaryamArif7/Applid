@@ -1,11 +1,4 @@
 import supabase from "../db/supabase.js";
-
-/**
- * Middleware that verifies the Bearer token sent by the extension or frontend.
- * Attaches req.user to every authenticated request.
- *
- * Usage: router.get("/submissions", authenticate, handler)
- */
 export async function authenticate(req, res, next) {
   const authHeader = req.headers.authorization;
 

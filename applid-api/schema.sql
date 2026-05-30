@@ -1,12 +1,7 @@
--- ─────────────────────────────────────────────
--- Applid Database Schema
--- Run this in your Supabase SQL Editor
--- ─────────────────────────────────────────────
 
--- Enable UUID generation
 create extension if not exists "pgcrypto";
 
--- ── Submissions ──────────────────────────────
+
 create table submissions (
   id            uuid primary key default gen_random_uuid(),
   user_id       uuid references auth.users(id) on delete cascade not null,
@@ -18,7 +13,6 @@ create table submissions (
   created_at    timestamptz not null default now()
 );
 
--- ── Answers ──────────────────────────────────
 create table answers (
   id             uuid primary key default gen_random_uuid(),
   submission_id  uuid references submissions(id) on delete cascade not null,
@@ -28,13 +22,12 @@ create table answers (
   created_at     timestamptz not null default now()
 );
 
--- ── Row Level Security ───────────────────────
--- Users can only see and modify their own data
+
 
 alter table submissions enable row level security;
 alter table answers enable row level security;
 
--- Submissions RLS
+
 create policy "Users see own submissions"
   on submissions for select
   using (auth.uid() = user_id);
@@ -51,7 +44,6 @@ create policy "Users delete own submissions"
   on submissions for delete
   using (auth.uid() = user_id);
 
--- Answers RLS
 create policy "Users see own answers"
   on answers for select
   using (auth.uid() = user_id);
@@ -64,7 +56,7 @@ create policy "Users delete own answers"
   on answers for delete
   using (auth.uid() = user_id);
 
--- ── Indexes for performance ──────────────────
+
 create index on submissions (user_id, submitted_at desc);
 create index on answers (user_id);
 create index on answers (submission_id);

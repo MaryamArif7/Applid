@@ -1,10 +1,4 @@
 import supabase from "../db/supabase.js";
-
-/**
- * GET /answers
- * Returns all saved answers for the user, grouped by question similarity.
- * This powers the Answer Library feature.
- */
 export async function getAnswers(req, res) {
   const userId = req.user.id;
   const { search } = req.query;
@@ -15,7 +9,6 @@ export async function getAnswers(req, res) {
     .eq("user_id", userId)
     .order("created_at", { ascending: false });
 
-  // Basic search filter
   if (search) {
     query = query.ilike("question", `%${search}%`);
   }
