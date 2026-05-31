@@ -229,11 +229,10 @@ export default function DashboardSection() {
           className="text-5xl font-bold text-black tracking-tight leading-tight"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
-          An application dashboard<br />that builds itself.
+         One place for every application <br /> you've ever made
         </h2>
         <p className="mt-5 text-black text-base max-w-xl mx-auto leading-relaxed">
-          This is the web console where your captured submissions live. Every time you submit a Google Form,
-          the details populate instantly below. Log in from any machine to access your database.
+         The moment you submit a Google Form, it appears here. Questions, answers, status, date. Log in from anywhere. Search anything. Never start from scratch again.
         </p>
       </div>
 
