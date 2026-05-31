@@ -2,19 +2,8 @@
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden"
-      style={{
-   background: `
-  radial-gradient(
-    ellipse 80% 60% at 60% 35%,
-    #06b6d4 0%,      /* cyan-500 — bright core */
-    #0e7490 20%,     /* cyan-700 — mid ring */
-    #0a4a5c 45%,     /* deep teal transition */
-    #041e2b 70%,     /* near-black teal */
-    #020d14 100%     /* pure dark edge */
-  )
-`
-  }}>
+    <section className=" bg-[#011413] relative min-h-screen flex items-center pt-20 overflow-hidden"
+      >
 
       {/* Background grid lines */}
       <div className="absolute inset-0 opacity-[0.04]"

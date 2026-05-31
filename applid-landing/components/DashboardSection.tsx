@@ -221,19 +221,17 @@ export default function DashboardSection() {
   ];
 
   return (
-    <section id="console" className="relative px-4 md:px-8 py-24" style={{ position: "relative", zIndex: 1 }}>
+    <section  className="bg-gray-200 relative px-4 md:px-8 py-24" style={{ position: "relative", zIndex: 1 }}>
       {/* Section header */}
       <div className="max-w-5xl mx-auto text-center mb-14">
-        <p className="text-xs font-mono text-[#00e5a0] uppercase tracking-widest mb-4">
-          Explore the Live Web Console
-        </p>
+        
         <h2
-          className="text-5xl font-bold text-white tracking-tight leading-tight"
+          className="text-5xl font-bold text-black tracking-tight leading-tight"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
           An application dashboard<br />that builds itself.
         </h2>
-        <p className="mt-5 text-white/50 text-base max-w-xl mx-auto leading-relaxed">
+        <p className="mt-5 text-black text-base max-w-xl mx-auto leading-relaxed">
           This is the web console where your captured submissions live. Every time you submit a Google Form,
           the details populate instantly below. Log in from any machine to access your database.
         </p>
