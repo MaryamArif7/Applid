@@ -12,18 +12,10 @@ export default function Footer() {
             </svg>
           </div>
           <span className="font-display font-bold text-white">applid</span>
-          <span className="font-mono text-[10px] text-accent/50 border border-accent/15 rounded px-1 py-0.5">v1.1</span>
+
         </div>
 
-        <nav className="flex items-center gap-8 text-sm">
-          {['Privacy', 'Terms', 'Documentation', 'Status'].map((item) => (
-            <a key={item} href="#" className="transition-colors duration-200 hover:text-white"
-              style={{ color: '#6b9080' }}>
-              {item}
-            </a>
-          ))}
-        </nav>
-
+       
         <p className="text-xs font-mono" style={{ color: '#6b9080' }}>
           © 2026 Applid · Built for the applicant, not the recruiter.
         </p>
