@@ -16,12 +16,12 @@ export default function Navbar() {
           </svg>
         </div>
         <span className="font-display font-700 text-white text-lg tracking-tight">applid</span>
-        <span className="font-mono text-[10px] text-accent/70 border border-accent/20 rounded px-1.5 py-0.5 ml-1">v1.1</span>
+
       </div>
 
       {/* Nav links */}
       <div className="hidden md:flex items-center gap-8">
-        {['How it Works', 'The Problem', 'Web Console', 'Extension Engine'].map((item) => (
+        {['How it Works', 'Features', 'Contact'].map((item) => (
           <a key={item} href="#" className="text-sm text-textSecondary hover:text-white transition-colors duration-200 font-medium">
             {item}
           </a>
@@ -31,12 +31,9 @@ export default function Navbar() {
       {/* CTAs */}
       <div className="hidden md:flex items-center gap-3">
         <button className="text-sm font-semibold px-4 py-2 rounded-lg border border-white/20 text-white hover:border-white/40 hover:bg-white/5 transition-all duration-200">
-          Test Form Sandbox
+      Add To Chrome
         </button>
-        <button className="text-sm font-semibold px-4 py-2 rounded-lg text-bgDark transition-all duration-200 hover:opacity-90"
-          style={{ background: '#00e5a0' }}>
-          Launch Dashboard
-        </button>
+       
       </div>
 
       {/* Mobile menu toggle */}
