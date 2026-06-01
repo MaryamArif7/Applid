@@ -3,7 +3,8 @@
 export default function HeroSection() {
   return (
     <section
-      className="bg-[#011413] relative min-h-screen flex flex-col overflow-hidden pt-20"
+      className=" relative min-h-screen flex flex-col overflow-hidden pt-20"
+        style={{ background: 'rgba(7,26,21,0.92)', backdropFilter: 'blur(16px)' }}
      
     >
       {/* ── Main content: grows to fill, pins pills to bottom ── */}

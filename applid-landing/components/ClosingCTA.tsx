@@ -2,8 +2,9 @@
 
 export default function ClosingCTA() {
   return (
-    <section className="py-32 relative overflow-hidden"
-      style={{ background: '#040f0c' }}>
+    <section className=" py-32 relative overflow-hidden"
+      style={{ background: 'rgba(7,26,21,0.92)', backdropFilter: 'blur(16px)' }}
+      >
 
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px"
