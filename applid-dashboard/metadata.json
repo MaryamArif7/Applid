@@ -1,0 +1,8 @@
+{
+  "name": "Applid",
+  "description": "Silent tracking and smart answer library dashboard for Google Form submissions captured via Applid.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
