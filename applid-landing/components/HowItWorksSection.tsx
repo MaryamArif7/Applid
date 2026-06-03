@@ -46,7 +46,7 @@ const STEPS = [
 export default function HowItWorksSection() {
   return (
     <section id="how-it-works" className="py-24 relative overflow-hidden"
-       style={{ background: 'rgba(7,26,21,0.92)', backdropFilter: 'blur(16px)' }}>
+       style={{ background: 'rgba(7,26,21,0.92)' }}>
 
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px"

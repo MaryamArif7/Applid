@@ -3,7 +3,7 @@
 export default function ClosingCTA() {
   return (
     <section className=" py-32 relative overflow-hidden"
-      style={{ background: 'rgba(7,26,21,0.92)', backdropFilter: 'blur(16px)' }}
+      style={{ background: 'rgba(7,26,21,0.92)' }}
       >
 
       {/* Top border */}
