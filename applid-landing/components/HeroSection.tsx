@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       className="bg-slate-950 relative min-h-screen flex flex-col overflow-hidden pt-20"
-       style={{ background: "rgba(7,26,21,0.92)" }}
+        style={{ background: 'rgba(7,26,21,0.92)' }}
      
     >
       {/* ── Main content: grows to fill, pins pills to bottom ── */}

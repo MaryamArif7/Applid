@@ -35,7 +35,7 @@ import GmailSimulator from "../components/GmailSimulator";
 
 export default function App() {
   const [selectedTab, setSelectedTab] = useState<
-    "overview" | "tracker" | "library" | "gmail" | "extension"
+    "overview" | "tracker" | "library" | "Smart Reminders" | "extension"
   >("overview");
 
   const [applications, setApplications] = useState<Application[]>([]);
@@ -306,15 +306,15 @@ export default function App() {
           </button>
 
           <button
-            onClick={() => setSelectedTab("gmail")}
+            onClick={() => setSelectedTab("Smart Reminders")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
-              selectedTab === "gmail"
+              selectedTab === "Smart Reminders"
                 ? "bg-[#07241c] text-brand-green border border-brand-green/20 shadow-sm font-semibold"
                 : "text-slate-400 hover:text-white"
             }`}
           >
             <Mail className="w-3.5 h-3.5" />
-            Gmail Sync
+            Smart Reminders
           </button>
 
         
@@ -358,7 +358,7 @@ export default function App() {
           />
         )}
 
-        {selectedTab === "gmail" && (
+        {selectedTab === "Smart Reminders" && (
           <GmailSimulator
             emails={emails}
             applications={applications}

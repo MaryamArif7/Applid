@@ -254,12 +254,9 @@ export default function DashboardSection() {
             </div>
             <div>
               <p className="text-sm font-bold text-stone-900" style={{ fontFamily: "'Syne', sans-serif" }}>
-                applid web console
+                applid dashboard
               </p>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse" />
-                <span className="text-[11px] text-stone-400">Managing {applications.length} persistent application repositories.</span>
-              </div>
+              
             </div>
           </div>
 
@@ -282,18 +279,7 @@ export default function DashboardSection() {
           </div>
         </div>
 
-        {/* Sub-header */}
-        <div className="bg-stone-50 border-b border-stone-200/60 px-6 py-3 flex items-center justify-between gap-4 text-xs">
-          <div className="flex items-center gap-2 text-stone-500">
-            <span className="font-mono">USER STATE:</span>
-            <span className="font-bold text-stone-800">www.maryamarif28@gmail.com</span>
-          </div>
-          <div className="text-stone-500 font-mono flex items-center gap-3">
-            <span>SYNC RATE: <strong className="text-emerald-600">100%</strong></span>
-            <span>•</span>
-            <span>SYS TIME (UTC): <strong className="text-stone-800">2026-05-30 04:13</strong></span>
-          </div>
-        </div>
+       
 
         {/* ── TAB CONTENT ── */}
         <div className="flex-1 p-6 md:p-8 bg-stone-50/20">
@@ -396,12 +382,7 @@ export default function DashboardSection() {
                         >
                           {selectedApp.title}
                         </h3>
-                        <p className="text-xs text-stone-500 font-mono mt-1 break-all">
-                          URL:{" "}
-                          <a href={selectedApp.url} target="_blank" rel="noreferrer" className="underline hover:text-[#0c2e2b]">
-                            {selectedApp.url.slice(0, 50)}...
-                          </a>
-                        </p>
+                       
                       </div>
 
                       {/* Status updater */}
