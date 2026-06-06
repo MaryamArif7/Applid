@@ -31,11 +31,11 @@ import Overview from "../components/Overview";
 import Tracker from "../components/Tracker";
 import AnswerLibrary from "../components/AnswerLibrary";
 import GmailSimulator from "../components/GmailSimulator";
-
+import HealthIndex from "../components/HealthIndex";
 
 export default function App() {
   const [selectedTab, setSelectedTab] = useState<
-    "overview" | "tracker" | "library" | "Smart Reminders" | "extension"
+    "overview" | "tracker" | "library" | "Smart Reminders" | "extension"|"healthIndex"
   >("overview");
 
   const [applications, setApplications] = useState<Application[]>([]);
@@ -280,7 +280,6 @@ export default function App() {
             <LayoutDashboard className="w-3.5 h-3.5" />
             Overview
           </button>
-
           <button
             onClick={() => setSelectedTab("tracker")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
@@ -292,7 +291,6 @@ export default function App() {
             <FileText className="w-3.5 h-3.5" />
             Tracker
           </button>
-
           <button
             onClick={() => setSelectedTab("library")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
@@ -304,7 +302,6 @@ export default function App() {
             <Library className="w-3.5 h-3.5" />
             Answers
           </button>
-
           <button
             onClick={() => setSelectedTab("Smart Reminders")}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
@@ -316,8 +313,18 @@ export default function App() {
             <Mail className="w-3.5 h-3.5" />
             Smart Reminders
           </button>
-
-        
+      
+          <button
+            onClick={() => setSelectedTab("healthIndex")}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+              selectedTab === "healthIndex"
+                ? "bg-[#07241c] text-brand-green border border-brand-green/20 shadow-sm font-semibold"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            <Zap className="w-3.5 h-3.5" />
+            Health Index
+          </button>
         </nav>
 
         <div className="flex items-center gap-3.5 bg-[#050d0a] p-1.5 rounded-xl border border-emerald-950/85">
@@ -366,6 +373,7 @@ export default function App() {
             onSyncAllEmails={handleSyncAllEmails}
           />
         )}
+        {selectedTab === "healthIndex" && <HealthIndex />}
       </main>
     </div>
   );
